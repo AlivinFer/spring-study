@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alivin.mapper.UserMapper">
+    <insert id="addUser" parameterType="com.alivin.pojo.User">
+        INSERT INTO user(id, uname, pwd)
+        VALUES (#{id}, #{name}, #{pwd})
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user
+        where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="com.alivin.pojo.User">
+        UPDATE user
+        SET uname = #{name}, pwd = #{pwd}
+    </update>
+
+    <select id="selectUser" resultType="com.alivin.pojo.User">
+        SELECT * FROM user
+    </select>
+
+</mapper>
